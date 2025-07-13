@@ -1,0 +1,130 @@
+/* General */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #0b0c42;
+    color: white;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    background-color: #0b0c42;
+    border-bottom: 2px solid #00ffae;
+    height: 60px;
+    box-sizing: border-box;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn-logout {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.btn-logout:hover {
+    background-color: #00ffae;
+}
+
+/* Main Content */
+.admin-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 124px);
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.admin-container {
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+}
+
+.admin-container h1 {
+    margin-bottom: 6rem;
+    font-size: 2.5rem;
+}
+
+/* Symmetrical Options Grid */
+.admin-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.admin-options .card {
+    background-color: #fff;
+    color: #0b0c42;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+}
+
+.admin-options .card:hover {
+    background-color: #00e09f;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #0b0c42;
+    color: white;
+    text-align: center;
+    height: 60px;
+    font-size: 0.85rem;
+    border-top: 2px solid #00ffae;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+@media (max-width: 700px) {
+    .admin-options {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .admin-main {
+        padding: 2rem 1rem;
+    }
+
+    .admin-container h1 {
+        font-size: 1.75rem;
+        margin-bottom: 6rem;
+    }
+}

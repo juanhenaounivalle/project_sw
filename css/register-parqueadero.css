@@ -1,0 +1,285 @@
+/* Reset y básicos */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0c42;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Bordes verdes */
+.header-border,
+.footer-border {
+    height: 2px;
+    background: #00ffae;
+    width: 100%;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    background: #0b0c42;
+    height: 60px;
+}
+
+.logo-img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn-logout {
+    background: #0b0c42;
+    border: 1px solid #0b0c42;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background .3s, color .3s;
+    font-size: 1rem;
+}
+
+.btn-logout:hover {
+    background: #00ffae;
+}
+
+/* Contenedor principal */
+.reg-main {
+    min-height: calc(100vh - 124px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 2rem;
+}
+
+.reg-container {
+    background: white;
+    color: #0b0c42;
+    max-width: 360px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.reg-container h1 {
+    margin: 0 0 .5rem;
+    font-size: 1.8rem;
+}
+
+.reg-container h2 {
+    margin: 0 0 1rem;
+    color: #444;
+    font-weight: normal;
+    font-size: 1.2rem;
+}
+
+/* Labels e inputs */
+.reg-container form label {
+    display: block;
+    text-align: left;
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+
+.reg-container form input,
+.reg-container form select {
+    width: 100%;
+    padding: .6rem;
+    margin-top: .3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Mapa */
+.map {
+    position: relative;
+    /* importante para que controles funcionen */
+    width: 100%;
+    height: 200px;
+    border: 1px solid #ccc;
+    margin-top: .5rem;
+}
+
+/* Grupos repetibles */
+.group-fieldset {
+    margin-top: 1.5rem;
+    border: none;
+    padding: 0rem;
+}
+
+.group-fieldset legend {
+    display: block;
+    text-align: left;
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+
+.group-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    /* margin-bottom: .5rem; */
+}
+
+.group-row>* {
+    flex: 1 1 auto;
+}
+
+.btn-add {
+    flex: 0 0 auto;
+    background: #0b0c42;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    /* line-height: 1; */
+    cursor: pointer;
+}
+
+.btn-remove {
+    flex: 0 0 auto;
+    background: #942020;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    /* line-height: 1; */
+    cursor: pointer;
+}
+
+/* Botón submit */
+.btn-submit {
+    margin-top: 2rem;
+    width: 70%;
+    padding: .7rem;
+    background: #0b0c42;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+.btn-submit:hover {
+    background: #00ffae;
+    color: #0b0c42;
+}
+
+/* ✅ NUEVO: Estilo para el contenedor de acciones de horario */
+.horario-actions {
+    /* Ocupa todo el ancho para forzar un salto de línea */
+    flex-basis: 100%;
+
+    /* Usa flexbox para ordenar los elementos internos */
+    display: flex;
+    flex-direction: column;
+    /* Los apila verticalmente */
+    align-items: center;
+    /* Los centra horizontalmente */
+    gap: 0.75rem;
+    /* Espacio entre el checkbox y el botón */
+    margin-top: 0.5rem;
+    /* Espacio respecto a los inputs de hora */
+}
+
+/* Contenedor del checkbox y el texto "Cerrado" */
+
+.chk-label {
+    display: none;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    padding-left: 28px;
+    font-weight: normal;
+}
+
+/* Ocultamos el checkbox real que pone el navegador por defecto */
+.chk-cerrado {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+/* Dibujamos nuestro propio cuadro para el checkbox */
+.chk-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Dibujamos la marca de verificación (palomita/chulito) */
+.chk-label::after {
+    content: '';
+    position: absolute;
+    display: none;
+    /* Oculto hasta que se marque */
+    left: 7px;
+    top: 50%;
+    width: 5px;
+    height: 10px;
+    border: solid #0b0c42;
+    border-width: 0 3px 3px 0;
+    transform: translateY(-50%) rotate(45deg);
+    margin-top: -2px;
+}
+
+/* Cuando el checkbox se marca, cambiamos el estilo del cuadro */
+.chk-label.is-checked::before {
+    background-color: #00ffae;
+    border-color: #00ffae;
+}
+
+/* Y mostramos la marca de verificación */
+.chk-label.is-checked::after {
+    display: block;
+}
+
+/* Footer */
+footer {
+    background: #0b0c42;
+    color: white;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .85rem;
+}
+
+/* Responsive */
+@media (max-width:600px) {
+    .reg-main {
+        padding: 2rem;
+    }
+
+    .reg-container {
+        padding: 1.5rem;
+    }
+
+    .map {
+        height: 140px;
+    }
+}

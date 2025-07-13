@@ -1,0 +1,139 @@
+/* register.css */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #0b0c42;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    background-color: #0b0c42;
+    border-bottom: 2px solid #00ffae;
+    height: 60px;
+    box-sizing: border-box;
+}
+
+/* Logo */
+header .logo-img {
+    height: 40px;
+    cursor: pointer;
+}
+
+/* Contenedor principal */
+.login-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b0c42;
+    min-height: calc(100vh - 124px);
+    /* 60px header + 2px header-border + 2px footer-border + 60px footer */
+    padding: 2.5rem;
+}
+
+/* Caja blanca */
+.login-container {
+    background-color: #fff;
+    color: #0b0c42;
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Títulos */
+.login-container h1 {
+    margin: 0 0 0.5rem;
+    font-size: 1.8rem;
+}
+
+.login-container h2 {
+    margin: 0 0 1.5rem;
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #444;
+}
+
+/* Inputs y select */
+.login-container input,
+.login-container select {
+    width: 80%;
+    padding: 0.65rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Placeholder darker */
+.login-container input::placeholder {
+    color: #999;
+}
+
+/* Botón de registro */
+.login-container button {
+    width: 50%;
+    padding: 0.65rem;
+    background-color: #0b0c42;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 0.75rem;
+}
+
+.login-container button:hover {
+    background-color: #00e09f;
+}
+
+/* Enlace a login */
+.login-register {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.login-register a {
+    color: #0b0c42;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-register a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #0b0c42;
+    color: white;
+    text-align: center;
+    height: 60px;
+    font-size: 0.85rem;
+    border-top: 2px solid #00ffae;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 1.5rem 1rem;
+        margin: 0 1rem;
+    }
+}
